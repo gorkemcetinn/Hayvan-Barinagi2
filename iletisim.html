@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Hayvan Barınağı</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Hayvan Barınağı</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="hakkimizda.html">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="sahiplen.html">Sahiplen</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="bagis.html">Bağış Yap</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semibold" href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="contact" class="mt-5 pt-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 text-dark animate__animated animate__fadeIn" style="font-family: 'Poppins', sans-serif;">Bizimle İletişime Geçin</h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="contact-info animate__animated animate__fadeInLeft">
+                        <h3 class="text-success mb-4">İletişim Bilgilerimiz</h3>
+                        <p><strong>Adres:</strong> Örnek Mahallesi, Barınak Sokak No:10, İstanbul</p>
+                        <p><strong>Telefon:</strong> +90 123 456 78 90</p>
+                        <p><strong>Email:</strong> info@hayvanbarinagi.com</p>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.2718441828513!2d28.9783!3d41.0382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzE3LjUiTiAyOMKwNTgnNDEuOSJF!5e0!3m2!1str!2str!4v1625136273456!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="contact-form animate__animated animate__fadeInRight">
+                        <h3 class="text-success mb-4">Bize Mesaj Gönderin</h3>
+                        <form id="contactForm" onsubmit="handleSubmit(event)">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Adınız</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Adresiniz</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Mesajınız</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg w-100">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <p class="mb-0 fw-semibold">&copy; 2024 Hayvan Barınağı. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <!-- Bootstrap JS ve Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            alert(`Sayın ${name}, mesajınız başarıyla gönderildi!\n\nEmail: ${email}\nMesaj: ${message}`);
+            
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
