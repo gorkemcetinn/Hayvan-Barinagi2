@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: barinak
-        image: gorkemdocker/barinak-frontend:latest
+        image: gorkem03/barinak-frontend:latest
         ports:
         - containerPort: 80
