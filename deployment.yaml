@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: barinak-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: barinak
+  template:
+    metadata:
+      labels:
+        app: barinak
+    spec:
+      containers:
+      - name: barinak
+        image: gorkemdocker/barinak-frontend:latest
+        ports:
+        - containerPort: 80
